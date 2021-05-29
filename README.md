@@ -3,7 +3,7 @@ Being being passionate about algorithms and data structures, I always look for o
 
  The app is an visualization in a user-friendly interface  of the Graham scan algorithm. It is implemented in WPF technology with the MVVM architecure in mind.
 
-![Solved convex hull](Images/solvedhull.png)
+![Solved convex hull](Images/solvedHull.png)
 ##### [More screenshots below](#Screenshots)
 # The convex hull problem
 In geometry, the convex hull (or convex closure) of a shape is the smallest convex region that contains that shape. In other words, the convex hull of a set of points is the smallest shape that includes all the points. The points might be situated in the interior of the shape or exactly on boundary. In this case, the shape is defined by the edges between the points on the convex hull. 
@@ -44,10 +44,10 @@ What does this button do?
 
 # <a name="Screenshots"></a>Screenshots
 Points before solving the convex hull:
-![Points on canvas](Images/drawnpoints.png)
+![Points on canvas](Images/drawnPoints.png)
 
 The solved convex hull of points from previous image:
-![Solved hull](Images/solvedhull.png)
+![Solved hull](Images/solvedHull.png)
 
 The solved convex hull random points:
 ![Random points solved](Images/solvedforrandompoints.png)
