@@ -1,0 +1,101 @@
+﻿<Window x:Class="ConvexHullAlgorithm.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ConvexHullAlgorithm" 
+        xmlns:i="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:materialdesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="Graham Scan Algorithm" Height="750" Width="850" 
+        Background="DarkCyan"
+        WindowStyle="ToolWindow"
+        ResizeMode="CanResizeWithGrip"
+        FontFamily="{materialdesign:MaterialDesignFont}"
+        WindowStartupLocation="CenterScreen">
+    <Grid x:Name="MainGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="3*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Name ="LeftPanel"  
+                    Grid.Column="0" 
+                    HorizontalAlignment="Stretch" 
+                    VerticalAlignment="Stretch" >
+            <i:StackPanel.Background>
+                <i:LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <i:GradientStop Color="#FF295F8D" Offset="0"/>
+                    <i:GradientStop Color="#FF6A18BB" Offset="1"/>
+                </i:LinearGradientBrush>
+            </i:StackPanel.Background>
+            <Button                    
+                      Content="Draw perimeter" 
+                      Command="{Binding Path=DrawLineCommand}"
+                      HorizontalAlignment="Center" 
+                      Height="30" Width="165"
+                      Margin="0,30,0,5"
+                Style="{DynamicResource MaterialDesignRaisedButton}">
+            </Button>
+            
+            <Button 
+                x:Name="DrawRandomPoints" 
+                Content="Draw random points" 
+                Command= "{Binding Path=DrawRandomPointsCommand}" 
+                HorizontalAlignment="Center"
+                Height="30" 
+                Width="165"
+                Margin="0,30,0,5"
+                Style="{DynamicResource MaterialDesignRaisedButton}"/>
+            
+            <Button x:Name="ClearBoardButton"  
+                    Content="Clear board"
+                    Command= "{Binding Path=ClearBoardCommand}" 
+                    HorizontalAlignment="Center" 
+                    Height="30" 
+                    Width="165" 
+                    Margin="0,30,0,5"
+                    Style="{DynamicResource MaterialDesignRaisedButton}"/>
+            <Button 
+                x:Name="ClearLinesButton"  
+                Content="Clear lines" 
+                Command= "{Binding Path=ClearLinesCommand}" 
+                HorizontalAlignment="Center" 
+                Height="30" 
+                Width="165"
+                Margin="0,30,0,5"
+                Style="{DynamicResource MaterialDesignRaisedButton}"/>
+        </StackPanel>
+
+        <TextBlock
+                Grid.Column="0"
+                VerticalAlignment="Bottom"
+                HorizontalAlignment="Center"
+                Margin="0 0 0 50"
+                Foreground="WhiteSmoke"
+                Style="{DynamicResource MaterialDesignHelperTextBlock}">
+                by Tivadar Ionut
+                <LineBreak/>
+                (c) 2020
+        </TextBlock>
+        <ItemsControl  Grid.Column="1" 
+                       Name="DrawingCanvas"  
+                       HorizontalAlignment="Stretch" 
+                       VerticalAlignment="Stretch"  
+                       ItemsSource="{Binding Path=ItemsOnCanvas}" 
+                       MouseLeftButtonDown="DrawingCanvas_MouseLeftButtonDown">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <Canvas  Background="White" 
+                             HorizontalAlignment="Stretch"  
+                             VerticalAlignment="Stretch" 
+                             Margin="0,0,0,0"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+        </ItemsControl>
+
+
+    </Grid>
+</Window>
