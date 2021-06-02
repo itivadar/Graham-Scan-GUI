@@ -1,7 +1,5 @@
 # Graham-Scan-GUI
-Being being passionate about algorithms and data structures, I always look for opportunities to implement new ideas in this area.
-
- The app is an visualization in a user-friendly interface  of the Graham scan algorithm. It is implemented in WPF technology with the MVVM architecure in mind.
+The app is an visualization in a user-friendly interface  of the Graham's scan algorithm. The Graham scan is a method of determining the smallest convex polygon that contains all the points from the plane. It is implemented in WPF technology with the MVVM architecure in mind.
 
 ![Solved convex hull](Images/solvedHull.png)
 ##### [More screenshots below](#Screenshots)
